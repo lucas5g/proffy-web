@@ -1,37 +1,41 @@
 import React from 'react';
 
-// import { Container } from './styles';
-import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
-// import whatsappIcon from '../../../assets'
+import './styles.css';
 
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 const TeacherItem: React.FC = () => {
   return (
-    <article>
+    <article className="teacher-item">
       <header>
-        <img src="https://avatars3.githubusercontent.com/u/15263395?s=460&u=4ee422b74a486820fd98052a2097586d8bb2cecc&v=4" alt="meu perfil" />
-
+        <img
+          src="https://avatars3.githubusercontent.com/u/15263395?s=460&u=4ee422b74a486820fd98052a2097586d8bb2cecc&v=4"
+          alt="Lucas de sousa"
+        />
+        <div>
+          <strong>Lucas de Sousa</strong>
+          <span>Desenvolvimento Web</span>
+        </div>
       </header>
-
       <p>
-        Entusiasta das melhores tecnologias de química avançada.
-      <br /><br />
-      Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências.
-    </p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+        doloremque similique distinctio voluptate veniam laboriosam perferendis
+        numquam, laborum beatae molestiae nulla quae accusamus facere minima
+        soluta quas perspiciatis itaque quidem!
+      </p>
 
       <footer>
         <p>
-          Preço/Hora
-        <strong> R$ 80,00</strong>
+          Preço/hora
+          <strong>R$ 80,00</strong>
         </p>
-
-        <button>
-          <img src={whatsappIcon} alt="whatssap" />
-        Entrar em contato
-      </button>
+        <button type="button">
+          <img src={whatsappIcon} alt="Whatsapp" />
+          Entrar em contato
+        </button>
       </footer>
     </article>
   );
-}
+};
 
 export default TeacherItem;

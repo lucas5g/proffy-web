@@ -1,26 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import PageHeader from '../../components/PageHeader';
 
-
-import './styles.css'
+import './styles.css';
 import TeacherItem from '../../components/TeacherItem';
-
-
-// import { Container } from './styles';
 
 const TeacherList: React.FC = () => {
   return (
     <div id="page-teacher-list" className="container">
-      <PageHeader title={'Estes são os proffys disponíveis'} >
-        <form id="search-teachers" >
+      <PageHeader title="Estes são os proffys disponíveis.">
+        <form id="search-teachers">
           <div className="input-block">
             <label htmlFor="subject">Matéria</label>
             <input type="text" id="subject" />
           </div>
 
           <div className="input-block">
-            <label htmlFor="week_day">Dia da semana</label>
+            <label htmlFor="week_day">Dia da Semana</label>
             <input type="text" id="week_day" />
           </div>
 
@@ -28,17 +24,17 @@ const TeacherList: React.FC = () => {
             <label htmlFor="time">Hora</label>
             <input type="text" id="time" />
           </div>
-
-
         </form>
       </PageHeader>
 
-      {/* <main>
+      <main>
         <TeacherItem />
-    
-      </main> */}
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+      </main>
     </div>
   );
-}
+};
 
 export default TeacherList;
