@@ -6,11 +6,12 @@ import './styles.css';
 import logoImg from '../../assets/images/logo.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 
-interface IPageHeaderProps {
+interface PageHeaderProps {
   title: string;
+  description?: string
 }
 
-const PageHeader: React.FC<IPageHeaderProps> = props => {
+const PageHeader: React.FC<PageHeaderProps> = props => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
@@ -22,6 +23,7 @@ const PageHeader: React.FC<IPageHeaderProps> = props => {
 
       <div className="header-content">
         <strong>{props.title}</strong>
+        { props.description && <p>{props.description}</p>}
         {props.children}
       </div>
     </header>

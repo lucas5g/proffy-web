@@ -3,8 +3,31 @@ import React from 'react';
 import './styles.css';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: number,
+  avatar: string,
+  bio: string,
+  cost: number,
+  name: string,
+  subject: string,
+  whatsapp: string,
+}
+
+interface TeacherItemProps {
+  teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+
+  function createNewConnection(){
+    api.post('connections', {
+      user_id: teacher.id, 
+    })
+  }
+
   return (
     <article className="teacher-item">
       <header>
@@ -13,26 +36,23 @@ const TeacherItem: React.FC = () => {
           alt="Lucas de sousa"
         />
         <div>
-          <strong>Lucas de Sousa</strong>
-          <span>Desenvolvimento Web</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-        doloremque similique distinctio voluptate veniam laboriosam perferendis
-        numquam, laborum beatae molestiae nulla quae accusamus facere minima
-        soluta quas perspiciatis itaque quidem!
+        {teacher.bio}
       </p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 80,00</strong>
+          <strong>R$ {teacher.cost},00</strong>
         </p>
-        <button type="button">
+        <a onClick={createNewConnection} target="_blanket" href={`https://wa.me/${teacher.whatsapp}`}>
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
